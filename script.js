@@ -1,4 +1,4 @@
-// open - stop
+// open - close
 let  CreateContent = document.querySelector('.CreateContent')
 let createBlockContent = document.querySelector('.createBlockContent')
 CreateContent.addEventListener('click', function NewBlock(){
@@ -12,13 +12,16 @@ CreateContent.addEventListener('click', function NewBlock(){
         document.body.style.overflowY = 'initial'
     }
 })
+// open - close
 let BlockNot = document.querySelector('.BlockNot')
 BlockNot.addEventListener('click', function BlockNot(){
     createBlockContent.classList.toggle('active')
     CreateContent.innerHTML = '<img src="message.png" class="createImgBl">'
     document.body.style.overflowY = 'initial'
 })
-// Add Blocks
+
+
+// adding blocks
 let Add = document.querySelector('.Add')
 let contentBlock2 = document.querySelector('.contentBlock2')
 Add.addEventListener('click', NewContent)
@@ -230,6 +233,7 @@ function NewContent(){
 }
 }
 }else{
+// the screen is small
 setTimeout(YesBLockRemove,10)
 function YesBLockRemove(){
     let NoCreateBlock = document.querySelector('.NoCreateBlock')
@@ -239,6 +243,7 @@ function YesBLockRemove(){
         createBlockContent.classList.toggle('active')
     }
 }
+// the screen is small
 setTimeout(NoBLockRemove,4000)
 function NoBLockRemove(){
     let NoCreateBlock = document.querySelector('.NoCreateBlock')
@@ -252,7 +257,7 @@ function NoBLockRemove(){
 }
 
 
-// check input and input.value == ''
+// checking data inputs
 let as = document.querySelector('.as')
 as.addEventListener('input', CheckInputs)
 let NamesInput = document.querySelector('.Names')
@@ -262,40 +267,41 @@ function CheckInputs(){
 if(NamesInput.value === ''){
     Add.disabled = true;
 }else if(NamesInput.value != ''){
-                Add.disabled = false;
-                if(ZeroInput.value == '' || ZeroInput.value == null){
-                    let sum = 1
-                    ZeroInput.value = `${sum}`
-                }
+    Add.disabled = false;
+        if(ZeroInput.value == '' || ZeroInput.value == null){
+            let sum = 1
+            ZeroInput.value = `${sum}`
         }
+    }
 }
 CheckInputs()
 
 
-// видимость
+// visibility on reboot
 contentBlock2.insertAdjacentHTML('beforeend',localStorage.getItem('img')  || '')
 contentBlock2.insertAdjacentHTML('beforeend',localStorage.getItem('img1') || '' )
 contentBlock2.insertAdjacentHTML('beforeend',localStorage.getItem('img2') || '')
 
-// number input
 
+// limit of reviews
 let CreateSpan = document.querySelector('.CreateSpan')
 function createSpans(){
     if(contentBlock2.childElementCount == 3){
      CreateSpan.style.visibility = 'initial'
      CreateSpan.style.opacity = '1'   
     }else{
-        console.log("Отзыв есть");
+        console.log("Лимит исчерпан");
     }
     
 }
 setTimeout(createSpans,4000)
 
-// remove post
+
+// delete a post
 let removeBl1 = document.querySelector('.removeBl1')
 let removeBl2 = document.querySelector('.removeBl2')
 let removeBl3 = document.querySelector('.removeBl3')
-
+// toggle active block1
 window.addEventListener("DOMContentLoaded", (event) => {
     let btnBlock1 = document.querySelector('.btnBlock1') 
     if (btnBlock1) {
@@ -304,7 +310,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         });
     }
 });
-
+// toggle active block2
 window.addEventListener("DOMContentLoaded", (event) => {
     let btnBlock2 = document.querySelector('.btnBlock2') 
     if (btnBlock2) {
@@ -313,8 +319,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         });
     }
 });
-
-
+// toggle active block3
 window.addEventListener("DOMContentLoaded", (event) => {
     let btnBlock3 = document.querySelector('.btnBlock3') 
     if (btnBlock3) {
@@ -323,8 +328,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         });
     }
 });
-
-
+// remove localStroge(img)
 window.addEventListener("DOMContentLoaded", (event) => {
     let removeBl1 = document.querySelector('.removeBl1')
     if (removeBl1) {
@@ -334,6 +338,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         });
     }
 });
+// remove localStroge(img1)
 window.addEventListener("DOMContentLoaded", (event) => {
     let removeBl2 = document.querySelector('.removeBl2')
     if (removeBl2) {
@@ -343,6 +348,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         });
     }
 });
+// remove localStroge(img2)
 window.addEventListener("DOMContentLoaded", (event) => {
     let removeBl3 = document.querySelector('.removeBl3')
     if (removeBl3) {
@@ -353,14 +359,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
 })
 
-// check input
+
+// checking the value
 ZeroInput.addEventListener('keydown', function(e){
     if(e.key.match(/^0/g,)) return e.preventDefault();
 })
-
+// name without numbers
 NamesInput.addEventListener('keydown', function(e){
     if(e.key.match(/[0-9]/)) return e.preventDefault();
 })
+// name without numbers
 NamesInput.addEventListener('input', function(e){
     NamesInput.value = NamesInput.value.replace(/[0-9]/g, "")
 })

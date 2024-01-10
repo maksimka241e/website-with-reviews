@@ -72,8 +72,6 @@ body{
     transition: all 0.6s ease;
     box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.696);
 }
-.blockTitle1{
-}
 .createBlockContent{
     opacity: 0;
     transition: all 0.6s ease;
@@ -84,15 +82,11 @@ body{
     visibility: initial;
     transition: all 0.6s ease;
     justify-content: center;
-
 }
 .contentBlock1{
     display: flex;
     position: fixed;
 }
-.CreateContent{
-}
-/*  */
 .createBlockNot{
     cursor: pointer;
     width: 100%;
@@ -136,7 +130,6 @@ body{
     flex-direction: column;
     justify-content: center;
 }
-
 .textName{
     font-family: Arial, Helvetica, sans-serif;
     cursor: default;
@@ -159,11 +152,15 @@ body{
     color: rgba(12, 21, 35, 1);
     font-size: 14px;
     transition: all 0.6s ease;
-    }
+}
 .Names:focus{
     transition: all 0.6s ease;
     border-bottom: 2px solid #2fb0f5;
 }  
+.Names[type=number]:invalid {
+    border-bottom: 2px solid red;
+    outline: none;
+}
 .textContent{
     cursor: default;
     font-family: Arial, Helvetica, sans-serif;
@@ -191,7 +188,10 @@ body{
     transition: all 0.6s ease;
     border-bottom: 2px solid #2fb0f5;
 }
-
+.Content[type=number]:invalid {
+    border-bottom: 2px solid red;
+    outline: none;
+}
 .textZero{
     cursor: default;
     font-family: Arial, Helvetica, sans-serif;
@@ -219,6 +219,10 @@ body{
     transition: all 0.6s ease;
     border-bottom: 2px solid #2fb0f5;
 }
+.Zero[type=number]:invalid {
+    border-bottom: 2px solid red;
+    outline: none;
+}
 .Add{
     cursor: pointer;
     margin-top: 20px;
@@ -230,7 +234,6 @@ body{
     border:1px solid;
 
 }
-/*  */
 .createImgBl{
     width: 34px;
     height: 34px;
@@ -240,9 +243,9 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: rgba(12, 21, 35, 1);
     transition: all 0.5s ease;
-  animation: ani 3s linear infinite;
-  opacity: 0;
-  visibility: hidden;
+    animation: ani 3s linear infinite;
+    opacity: 0;
+    visibility: hidden;
 }
 .CreateSpan:hover{
     transition: all 0.5s ease;
@@ -250,56 +253,56 @@ body{
     animation: anim 4s linear infinite;
 }
 @keyframes anim{
-    0%{
-        transition: all 0.5s ease;
-        transform: translateX(0px)
-    }
-    50%{
-        transition: all 0.5s ease;
-        transform: translateX(0px)
-    }
-    100%{
-        transition: all 0.5s ease;
-        transform: translateX(0px)
-    }
+0%{
+    transition: all 0.5s ease;
+    transform: translateX(0px)
+}
+50%{
+    transition: all 0.5s ease;
+    transform: translateX(0px)
+}
+100%{
+    transition: all 0.5s ease;
+    transform: translateX(0px)
+}
 }
 @keyframes ani{
-    0%{
-        transition: all 0.5s ease;
-        transform: translateX(1px)
-    }
-    10%{
-        transform: translateX(2px)
-    }
-    20%{
-        transform: translateX(3px)
-    }
-    30%{
-        transform: translateX(4px)
-    }
-    40%{
-        transform: translateX(5px)
-    }
-    50%{
-        transition: all 0.5s ease;
-        transform: translateX(0px)
-    }
-    60%{
-        transform: translateX(-1px)
-    }
-    70%{
-        transform: translateX(-2px)
-    }
-    80%{
-        transform: translateX(-3px)
-    }
-    90%{
-        transform: translateX(-4px)
-    }
-    100%{
-        transition: all 0.5s ease;
-        transform: translateX(-5px)
-    }
+0%{
+    transition: all 0.5s ease;
+    transform: translateX(1px)
+}
+10%{
+    transform: translateX(2px)
+}
+20%{
+    transform: translateX(3px)
+}
+30%{
+    transform: translateX(4px)
+}
+40%{
+    transform: translateX(5px)
+}
+50%{
+    transition: all 0.5s ease;
+    transform: translateX(0px)
+}
+60%{
+    transform: translateX(-1px)
+}
+70%{
+    transform: translateX(-2px)
+}
+80%{
+    transform: translateX(-3px)
+}
+90%{
+    transform: translateX(-4px)
+}
+100%{
+    transition: all 0.5s ease;
+    transform: translateX(-5px)
+}
 }
 .btnCreateBl{
     border: none;
@@ -362,7 +365,6 @@ body{
     color: rgba(12, 21, 35, 1);
     font-size: 15px;
     font-weight: 500;
-
 }
 /* block2 */
 .blockTitle2Con{
@@ -751,7 +753,6 @@ body{
     transition: all 0.6s ease;
     color: rgba(12, 21, 35, 0.645);
 }
-
 /* noCreateBlock */
 .NoCreateBlock{
     position: fixed;
@@ -777,102 +778,115 @@ body{
     text-align: center;
 }
 @media(max-width:1330px){
-    .contentBlock2{
-        grid-template-columns: auto auto;
-    }
+.contentBlock2{
+    grid-template-columns: auto auto;
+}
 }
 @media(max-width:1160px){
-    .createBlockContent1 {
-        background: #c2c2c2dc;
-        position: fixed;
-        display: flex;
-        justify-content: center;
-        border-radius: 15px;
-        border: 1px solid rgba(12, 21, 35, 1);
-        height: auto;
-        margin: 10px 10px;
-        width: auto;
-        max-width: 1140px;
-    }
+.createBlockContent1 {
+    background: #c2c2c2dc;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    border: 1px solid rgba(12, 21, 35, 1);
+    height: auto;
+    margin: 10px 10px;
+    width: auto;
+    max-width: 1140px;
+}
 }
 @media(max-width:920px){
     .contentBlock2{
-        grid-template-columns:auto;
+    grid-template-columns:auto;
     }
 }
 @media(max-width:700px){
-    .Names {
-        width: auto;
-        margin: auto 25px;
-        padding: 10px 15px;
-    }
-    .Content {
-        width: auto;
-        margin: auto 25px;
-        padding: 10px 15px;
-    }
-    .Zero {
-        width:auto;
-        margin: auto 25px;
-        padding: 10px 15px;
-    }
-    .Add {
-        width: auto;
-        margin: 15px 25px 0 25px;
-        margin-top: 20px;
-    }
-    .textName {
-        margin-right: 25px;
-        margin-left: 25px;
-        margin-bottom: 3px;
-    }
-    .textContent {
-        margin-right: 25px;
-        margin-left: 25px;
-        margin-bottom: 3px;
-    }
-    .textZero {
-        margin-right: 25px;
-        margin-left: 25px;
-        margin-bottom: 3px;
-    }
+.Names {
+    width: auto;
+    margin: auto 25px;
+    padding: 10px 15px;
+}
+.Content {
+    width: auto;
+    margin: auto 25px;
+    padding: 10px 15px;
+}
+.Zero {
+    width:auto;
+    margin: auto 25px;
+    padding: 10px 15px;
+}
+.Add {
+    width: auto;
+    margin: 15px 25px 0 25px;
+    margin-top: 20px;
+}
+.textName {
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-bottom: 3px;
+}
+.textContent {
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-bottom: 3px;
+}
+.textZero {
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-bottom: 3px;
+}
     /* block */
-    .blockCreate2 {
-        width: 100%;
-        margin: auto 10px;
-        height: auto;
-    }
+.blockCreate2 {
+    width: 100%;
+    margin: auto 10px;
+    height: auto;
+}
 }
 @media(max-width:450px){
-    .contentBlock2{
-        grid-template-columns:auto;
-        width: 100%;
-    }
-    .Block {
-        width: auto;
-        height: 450px;
-        margin: auto 30px;
-    }
-    .blockText1Con {
-        width: 100%;
-    }
-    .blockText2Con {
-        width: 100%;
-    }
-    .blockText3Con {
-        width: 100%;
-    }
-    .block1Title2{
-        width: 100%;
-    }
-    .block2Title2{
-        width: 100%;
-    }
-    .block3Title2{
-        width: 100%;
-    }
+.contentBlock2{
+    grid-template-columns:auto;
+    width: 100%;
 }
-
+.Block {
+    width: auto;
+    height: 450px;
+    margin: auto 30px;
+}
+.blockText1Con {
+    width: 100%;
+}
+.blockText2Con {
+    width: 100%;
+}
+.blockText3Con {
+    width: 100%;
+}
+.block1Title2{
+    width: 100%;
+}
+.block2Title2{
+    width: 100%;
+}
+.block3Title2{
+    width: 100%;
+}
+}
+@media(max-width:400px) {
+.footerBlock1{
+    flex-direction: column;
+    width: 100%;
+}
+.footerBlock3{
+    width: auto;
+    margin: auto;
+}
+.footerBlock2{
+    width: auto;
+    margin: auto;
+}
+}
 .footerBlock{
     width: 100%;
     background: rgba(255, 255, 255, 1);
@@ -923,19 +937,4 @@ body{
     border: 1px solid rgba(12, 21, 35, 1);
     border-radius:50px;
     padding: 3px 6px 3px 6px;
-}
-
-@media(max-width:400px) {
-    .footerBlock1{
-        flex-direction: column;
-        width: 100%;
-    }
-    .footerBlock3{
-        width: auto;
-        margin: auto;
-    }
-    .footerBlock2{
-        width: auto;
-        margin: auto;
-    }
 }
